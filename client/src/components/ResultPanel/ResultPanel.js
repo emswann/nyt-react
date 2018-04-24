@@ -1,9 +1,16 @@
 import React from "react";
 import { Panel, Well, Row, Col, Button } from "react-bootstrap";
 
+const styles = {
+  panelHeading : {
+    backgroundColor: "#337ab7",
+    color          : "white"
+  }
+}
+
 const ResultPanel = props => (
   <Panel>
-    <Panel.Heading className="text-center">
+    <Panel.Heading className="text-center" style={styles.panelHeading}>
       <Panel.Title>
         <h1>Results</h1>
       </Panel.Title>

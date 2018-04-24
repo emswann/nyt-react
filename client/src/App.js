@@ -5,11 +5,19 @@ import Header from "./components/Header";
 import NYT from "./pages/NYT";
 import NoMatch from "./components/NoMatch";
 
+const styles = {
+  body: {
+    backgroundColor: "#f5f5f5"
+  },
+  grid: {
+    backgroundColor: "#d08975"
+  }
+}
 const App = () => (
   <Router>
-    <div>
+    <div style={styles.body}>
       <Header />
-      <Grid>
+      <Grid style={styles.grid}>
         <Switch>
           <Route exact path="/" component={NYT} />
           <Route component={NoMatch} />

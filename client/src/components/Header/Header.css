@@ -1,0 +1,5 @@
+.jumbotron {
+  background: url("./nyc.jpg") no-repeat center center;
+  background-size: cover;
+  color: white
+}
