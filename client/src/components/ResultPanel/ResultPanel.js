@@ -1,7 +1,7 @@
 import React from "react";
 import { Panel, Well, Row, Col, Button } from "react-bootstrap";
 
-const Result = props => (
+const ResultPanel = props => (
   <Panel>
     <Panel.Heading className="text-center">
       <Panel.Title>
@@ -47,4 +47,4 @@ const Result = props => (
   </Panel>
 );
 
-export default Result;
+export default ResultPanel;

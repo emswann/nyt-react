@@ -1,7 +1,7 @@
 import React from "react";
 import { Panel, Well, Row, Col, Button } from "react-bootstrap";
 
-const Save = props => (
+const SavedPanel = props => (
   <Panel>
     <Panel.Heading className="text-center">
       <Panel.Title>
@@ -43,4 +43,4 @@ const Save = props => (
   </Panel>
 );
 
-export default Save;
+export default SavedPanel;

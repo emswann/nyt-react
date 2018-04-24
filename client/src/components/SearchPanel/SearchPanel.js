@@ -2,7 +2,7 @@ import React from "react";
 import { Panel } from "react-bootstrap";
 import Form from "../Form";
 
-const Search = props => (
+const SearchPanel = props => (
   <Panel>
     <Panel.Heading className="text-center">
       <Panel.Title>
@@ -21,4 +21,4 @@ const Search = props => (
   </Panel>
 );
 
-export default Search;
+export default SearchPanel;

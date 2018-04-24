@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Search from "../../components/Search";
-import Result from "../../components/Result";
+import SearchPanel from "../../components/SearchPanel";
+import ResultPanel from "../../components/ResultPanel";
 import API from "../../utils/API";
 
 class Home extends Component {
@@ -58,14 +58,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Search
+        <SearchPanel
           topic={this.state.topic}
           startYear={this.state.startYear}
           endYear={this.state.endYear}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}              
         />
-        <Result
+        <ResultPanel
           articles={this.state.articles}
           saveArticle={this.saveArticle}
         />

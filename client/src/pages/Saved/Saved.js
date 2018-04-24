@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Save from "../../components/Save";
+import SavedPanel from "../../components/SavedPanel";
 import API from "../../utils/API";
 
 class Saved extends Component {
@@ -26,7 +26,7 @@ class Saved extends Component {
   render() {
     return (
       <div>
-        <Save
+        <SavedPanel
           articles={this.state.articles}
           deleteArticle={this.deleteArticle}
         />
