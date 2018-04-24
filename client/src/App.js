@@ -1,17 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Grid } from "react-bootstrap";
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import Saved from "./pages/Saved";
+import NYT from "./pages/NYT";
+import NoMatch from "./components/NoMatch";
 
 const App = () => (
   <Router>
     <div>
       <Header />
       <Grid>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/" component={Saved} />
+        <Switch>
+          <Route exact path="/" component={NYT} />
+          <Route component={NoMatch} />
+        </Switch>
       </Grid>
     </div>
   </Router>
