@@ -37,6 +37,7 @@ const Form = props => (
       />
     </FormGroup>
     <Button 
+      disabled={!props.topic}
       bsStyle="primary" 
       type="submit"
       onClick={props.handleFormSubmit}
