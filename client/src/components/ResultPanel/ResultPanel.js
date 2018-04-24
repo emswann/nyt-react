@@ -30,7 +30,7 @@ const ResultPanel = props => (
                       apiId  : article._id,
                       title  : article.headline.main,
                       url    : article.web_url,
-                      pubDate: pub_date
+                      pubDate: article.pub_date
                     })}
                   >
                     Save

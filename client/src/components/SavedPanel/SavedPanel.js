@@ -12,7 +12,10 @@ const SavedPanel = props => (
       {props.articles.length ? 
         props.articles.map((article, i) => {
           let [year, month, rest] = article.saveDate.split("-");
-          let save_date = `${month}-${rest[0]}${rest[1]}-${year}`;         
+          let save_date = `${month}-${rest[0]}${rest[1]}-${year}`;  
+
+          [year, month, rest] = article.pubDate.split("-");
+          let pub_date = `${month}-${rest[0]}${rest[1]}-${year}`;        
          
           return (
             <Well className="article" key={article._id}>
@@ -21,7 +24,7 @@ const SavedPanel = props => (
                   <a target="_blank" href={article.url}>
                     <h3>{article.title}</h3>
                   </a>
-                  <h5>Publish Date: {article.pubDate}</h5>
+                  <h5>Publish Date: {pub_date}</h5>
                   <h5>Save Date: {save_date}</h5>
                 </Col>
                 <Col className="text-right" xs={12} md={4}>
