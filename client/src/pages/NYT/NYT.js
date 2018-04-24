@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "../Home";
 import Saved from "../Saved";
 import API from "../../utils/API";
+import Alert from "../../components/Alert";
 
 class NYT extends Component {
   state = {
@@ -9,7 +10,8 @@ class NYT extends Component {
     startYear     : "",
     endYear       : "",
     searchArticles: [],
-    savedArticles : []
+    savedArticles : [],
+    error         : ""
   };
 
   componentDidMount() {
@@ -21,19 +23,26 @@ class NYT extends Component {
       searchArticles : articles,
       topic          : "",
       startYear      : "", 
-      endYear        : "" 
+      endYear        : "",
+      error          : ""
     });
 
   loadSavedArticles = () => {
     API.getArticles()
-      .then(res => this.setState({ savedArticles: res.data }))
-      .catch(err => console.log(err));
+      .then(res => this.setState({ savedArticles: res.data, error: "" }))
+      .catch(err => {
+        console.log(err);
+        this.setState({ error: `Unable to load saved articles!`})
+      });
   };
 
   deleteArticle = id => {
     API.deleteArticle(id)
       .then(res => this.loadSavedArticles())
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.setState({ error: `Unable to remove saved article!`})
+      });
   };
 
   saveArticle = (index, articleObj) => {
@@ -43,7 +52,10 @@ class NYT extends Component {
         this.loadSearchArticles(articles.filter((article, i) => i !== index));
       })
       .then(res => this.loadSavedArticles())
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.setState({ error: `Unable to save article!`})
+      });
   };
 
   handleInputChange = event => {
@@ -69,13 +81,22 @@ class NYT extends Component {
         endDate  : endDate
       })
       .then(res => this.loadSearchArticles(res.data.response.docs))
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        this.setState({ error: `Unable to perform article search!`})
+      });
     }
   };
 
   render() {
     return (
       <div>
+        <Alert
+          type="danger"
+          style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+        >
+          {this.state.error}
+        </Alert>
         <Home
           articles={this.state.searchArticles}
           topic={this.state.topic}
