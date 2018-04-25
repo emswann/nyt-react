@@ -8,6 +8,8 @@ The user has the following options:
 2) Save articles to the database.
 3) Remove saved articles from the database.
 
+Finally, the user can click on any article headline and a new page will open which follows the link for the headline.
+
 Please refer to the video below for details regarding how the app works.
 
 <img src='./nyt-react.gif' alt='New York Times React GIF' width='550'>
