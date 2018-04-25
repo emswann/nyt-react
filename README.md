@@ -1,84 +1,48 @@
-# Create React Express App
+# NYT-React
+Single page MERN application to search and save New York Times articles. Uses MongoDB, Mongoose ORM, Node, Express and React.
 
-## About This Boilerplate
+This is a full stack news application which allows users to search, view and save New York Times articles.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+The user has the following options:
+1) Search the New York Times API and view the most recent 5 articles. The search topic is required. Start and end years are optional. Start year begins on January 1st. End year stops on December 31.
+2) Save articles to the database.
+3) Remove saved articles from the database.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Please refer to the video below for details regarding how the app works.
 
-## Starting the app locally
+<img src='./nyt-react.gif' alt='New York Times React GIF' width='550'>
 
-Start by installing front and backend dependencies. While in this directory, run the following commands:
+## Getting Started
 
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
+You should be able to download the files via the github pages link below and run locally on your computer:
+[https://github.com/emswann/nyt-react](https://github.com/emswann/nyt-react).
 
-After both installations complete, run the following command in your terminal:
+The application has also been published on Heroku:
+[https://nyt-react-ems.herokuapp.com/](https://nyt-react-ems.herokuapp.com/).
 
-```
-yarn start
-```
+## Prerequisites
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+NPM install based on package.json.
 
-## Deployment (Heroku)
+## Built With
 
-### Create a Git Repo
+* [JavaScript](https://www.javascript.com/) - Programming language.
+* [JSX](https://reactjs.org/docs/introducing-jsx.html) - Syntax extension to Javascript and used for React development.
+* [react](https://reactjs.org/) - Javascript library for building user interfaces.
+* [react-bootstrap](https://react-bootstrap.github.io/) - Front-end framework rebuilt for React.
+* [react-dom](https://reactjs.org/docs/react-dom.html) - Provides DOM-specific methods within React.
+* [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Provides DOM bindings for React Router.
+* [react-scripts](https://www.npmjs.com/package/react-scripts) - Provides configuration and scripts for Create React App.
+* [axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and Node.js
+* [node.js](https://nodejs.org/en/) - Server side programming language.
+* [express](https://www.npmjs.com/package/express) - Web application framework used for server side routing.
+* [mongoose](https://www.npmjs.com/package/sequelize) - Promised based ORM for using MongoDB in Node.js
+* [body-parser](https://www.npmjs.com/package/body-parser) - Middleware parser used for incoming request bodies.
 
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
+## Contributing
 
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
+Please feel free to offer any suggestions. As always, programming is a work of art in progress.
 
-### Heroku
+## Author
 
-Make sure that you have a Heroku app created for this project. If so, proceed to the next section, otherwise run the following command in your terminal:
-
-```
-heroku create
-```
-
-Optionally add an argument for your application's name after `create`, e.g.
-
-```
-heroku myAwesomeApp
-```
-
-### Deploying
-
-#### Option 1
-
-Use the deploy script inside of the outer `package.json`
-
-After confirming that you have an up to date git repository and a Heroku app created, run the following command to deploy:
-
-```
-yarn deploy
-```
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
-
-#### Option 2
-
-Manually deploy 
-
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
-
-1. Build the React app for production by running the following command:
-
-```
-yarn build
-```
-
-2. Add and commit all changes to git
-
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku!
+* **Elaina Swann** - [Github](https://github.com/emswann)

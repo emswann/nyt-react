@@ -66,20 +66,23 @@ class NYT extends Component {
   };
 
   handleFormSubmit = event => {
+    const APIKEY = `bdb59ae4073c4dd2a76b63604b28c1ec`;
+
     event.preventDefault();
     if (this.state.topic) {
-      let startDate = this.state.startYear 
-                        ? `${this.state.startYear}0101`
-                        : ``;
-      let endDate = this.state.endYear 
-                      ? `${this.state.endYear}1231`
-                      : ``;
+      let searchParamsObj = {
+        "api-key": APIKEY,
+        "q"      : this.state.topic, 
+        "sort"   : "newest" 
+      }
 
-      API.search({
-        query    : this.state.topic,
-        startDate: startDate,
-        endDate  : endDate
-      })
+      if (this.state.startYear) 
+        searchParamsObj.startDate = `${this.state.startYear}0101`;
+
+      if (this.state.endYear)
+        searchParamsObj.endDate = `${this.state.endYear}1231`;
+
+      API.search(searchParamsObj)
       .then(res => this.loadSearchArticles(res.data.response.docs))
       .catch(err => {
         console.log(err);
